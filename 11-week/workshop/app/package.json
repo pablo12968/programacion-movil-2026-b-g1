@@ -1,15 +1,14 @@
 {
-  "name": "catalogo-productos-ionic-react",
+  "name": "ica-w11",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Starter v2 del parcial práctico C2 · Programación Móvil (CORHUILA) — Catálogo de productos: API Express + Ionic React + Kotlin",
+  "description": "Ice Cream App: taller individual UX/UI",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "vite",
-    "server": "node server/index.js",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",

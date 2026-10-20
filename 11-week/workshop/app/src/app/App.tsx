@@ -1,10 +1,11 @@
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 
-import ProductDetailPage from '../features/products/presentation/ProductDetailPage';
-import ProductFormPage from '../features/products/presentation/ProductFormPage';
-import ProductListPage from '../features/products/presentation/ProductListPage';
+import { iceCreamOutline, bagOutline, receiptOutline } from 'ionicons/icons';
+import Catalogo from '../ica/Catalogo';
+import Personalizar from '../ica/Personalizar';
+import { Carrito, Pedidos, ShopProvider } from '../ica/shop';
 
 /* CSS base de Ionic (obligatorio) */
 import '@ionic/react/css/core.css';
@@ -16,25 +17,23 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Tema de la aplicación */
-import './theme/variables.css';
+import './theme/ica.css';
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/productos" component={ProductListPage} />
-        <Route exact path="/productos/nuevo" component={ProductFormPage} />
-        {/* React Router v5 puede activar la ruta equivocada si dos patrones coinciden
-            (/productos/nuevo también encajaría con /productos/:id). Por eso :id se
-            restringe a dígitos y "nuevo" no lo activa. */}
-        <Route exact path="/productos/:id(\d+)" component={ProductDetailPage} />
-        <Route exact path="/productos/:id(\d+)/editar" component={ProductFormPage} />
-        <Route exact path="/">
-          <Redirect to="/productos" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+  <IonApp><ShopProvider><IonReactRouter><IonTabs>
+    <IonRouterOutlet>
+      <Route exact path="/tabs/helados" component={Catalogo} />
+      <Route exact path="/tabs/helados/:id" component={Personalizar} />
+      <Route exact path="/tabs/carrito" component={Carrito} />
+      <Route exact path="/tabs/pedidos" component={Pedidos} />
+      <Route exact path="/"><Redirect to="/tabs/helados" /></Route>
+    </IonRouterOutlet>
+    <IonTabBar slot="bottom">
+      <IonTabButton tab="helados" href="/tabs/helados"><IonIcon icon={iceCreamOutline} /><IonLabel>Helados</IonLabel></IonTabButton>
+      <IonTabButton tab="carrito" href="/tabs/carrito"><IonIcon icon={bagOutline} /><IonLabel>Carrito</IonLabel></IonTabButton>
+      <IonTabButton tab="pedidos" href="/tabs/pedidos"><IonIcon icon={receiptOutline} /><IonLabel>Mis pedidos</IonLabel></IonTabButton>
+    </IonTabBar>
+  </IonTabs></IonReactRouter></ShopProvider></IonApp>
 );
 
 export default App;
