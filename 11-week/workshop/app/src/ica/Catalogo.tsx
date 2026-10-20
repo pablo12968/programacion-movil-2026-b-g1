@@ -33,15 +33,15 @@ export default function Catalogo({ cargar = cargarHelados }: { cargar?: typeof c
     {estado === 'datos' && helados.length > 0 && <>
     <label>Buscar por sabor<input className="ica-search" value={busqueda} onChange={event => setBusqueda(event.target.value)} placeholder="Por ejemplo, fresa" /></label>
     <div className="ica-actions">{['Todos', 'Clásicos', 'Frutales', 'Especiales'].map(nombre =>
-      <IonButton key={nombre} fill={categoria === nombre ? 'solid' : 'outline'} onClick={() => setCategoria(nombre)}>{nombre}</IonButton>)}</div>
-    <p>{visibles.length} sabores disponibles</p>
+      <IonButton key={nombre} aria-pressed={categoria === nombre} fill={categoria === nombre ? 'solid' : 'outline'} onClick={() => setCategoria(nombre)}>{nombre}</IonButton>)}</div>
+    <p role="status" aria-live="polite">{visibles.length} sabores disponibles</p>
     {visibles.length === 0 && <section><h2>No encontramos ese sabor</h2><p>Prueba otra categoría o borra la búsqueda.</p>
       <IonButton onClick={() => { setBusqueda(''); setCategoria('Todos'); }}>Restablecer búsqueda</IonButton></section>}
     <div className="ica-grid">
       {visibles.map(helado => <article className="ica-card" key={helado.id}>
         <p className="ica-note">{helado.category}</p><h2>{helado.name}</h2><p>{helado.description}</p>
         <p className="ica-price">Desde {cop(helado.price)}</p>
-        <IonButton routerLink={`/tabs/helados/${helado.id}`}>Personalizar</IonButton>
+        <IonButton aria-label={`Personalizar ${helado.name}`} routerLink={`/tabs/helados/${helado.id}`}>Personalizar</IonButton>
       </article>)}
     </div></>}<p className="ica-note">Recogida en tienda. Consulta al personal sobre alérgenos.</p></Marco>;
 }

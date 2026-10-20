@@ -8,7 +8,7 @@
 - CODE_REPO: https://github.com/pablo12968/ica.app
 - BASELINE: starter Ionic React oficial, commit eb86696b1b80402585555f30ba8984ebcb553643
 - REFLECTION_DOC: PENDIENTE de crear y compartir por el estudiante
-- MY_SCREENS: Catálogo de helados y personalización de tamaño/topping (pendiente de coordinar con los otros integrantes)
+- MY_SCREENS: Catálogo de helados y personalización de tamaño/topping
 <!-- CONFIG-END -->
 
 ## Origen y alcance
@@ -28,7 +28,6 @@ El starter abre en navegador y compila antes de modificarlo.
 
 ## Pendientes personales
 
-- Coordinar las dos pantallas con los compañeros para evitar duplicación.
 - Escribir personalmente las entradas CP0 a CP4 en Google Docs y compartirlo
   como Editor con jesus.gonzalez@corhuila.edu.co.
 - Sustituir REFLECTION_DOC por la URL real y entregar las tres URL en Moodle.

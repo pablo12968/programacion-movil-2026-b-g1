@@ -27,10 +27,29 @@
 .ica-content h2 { font-size: 1.25rem; }
 .ica-content p { line-height: 1.5; }
 .ica-note { color: var(--ica-muted); font-size: var(--ica-text-small); }
-.ica-grid { display: grid; gap: var(--ica-space-2); grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.ica-card { padding: var(--ica-space-2); border: 1px solid #d8c6c9; border-radius: 1rem; background: var(--ica-surface); }
+.ica-grid { display: grid; gap: var(--ica-space-2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.ica-card { display: flex; flex-direction: column; padding: var(--ica-space-2); border: 1px solid #d8c6c9; border-radius: 1rem; background: var(--ica-surface); min-width: 0; }
 .ica-price { color: var(--ion-color-primary); font-weight: 750; }
 .ica-form { display: grid; gap: var(--ica-space-2); }
 .ica-form label { display: grid; gap: var(--ica-space-1); }
 .ica-form select, .ica-search { font: inherit; padding: .75rem; border: 1px solid #65575a; border-radius: .5rem; background: white; color: var(--ion-text-color); width: 100%; }
 .ica-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-block: 1rem; }
+.ica-card p { margin-block: .5rem; }
+.ica-card h2 { margin-block: .25rem; font-weight: 700; }
+.ica-card ion-button { margin-top: auto; }
+ion-button { min-height: 48px; font-size: 1rem; text-transform: none; letter-spacing: normal; }
+ion-button::part(native) { min-height: 48px; white-space: normal; overflow-wrap: anywhere; }
+.ica-toolbar-title { font-size: 1.25rem; padding: .75rem 1rem; overflow-wrap: anywhere; }
+ion-tab-bar { min-height: 4.5rem; height: auto; --color: #65575a; }
+ion-tab-button { min-height: 48px; --color: #65575a; --padding-start: 4px; --padding-end: 4px; }
+ion-tab-button ion-label { font-size: .875rem; white-space: normal; overflow-wrap: anywhere; line-height: 1.2; }
+.ica-content { overflow-wrap: anywhere; padding-bottom: 2rem; }
+.ica-content > .ica-note:first-child { margin-block: 0 .75rem; }
+.ica-form select, .ica-search { min-height: 48px; box-sizing: border-box; }
+:focus-visible { outline: 3px solid #302526; outline-offset: 3px; }
+ion-button::part(native):focus-visible { outline: 3px solid #302526; outline-offset: -4px; }
+@media (prefers-reduced-motion: reduce) { ion-skeleton-text { --animation-duration: 0s; } }
+.ica-options { border: 1px solid #d8c6c9; border-radius: .75rem; padding: .75rem; min-width: 0; }
+.ica-options legend { font-weight: 700; padding-inline: .25rem; }
+.ica-options label { display: flex; align-items: center; min-height: 48px; gap: .75rem; cursor: pointer; }
+.ica-options input { flex: 0 0 1.5rem; width: 1.5rem; height: 1.5rem; accent-color: var(--ion-color-primary); }

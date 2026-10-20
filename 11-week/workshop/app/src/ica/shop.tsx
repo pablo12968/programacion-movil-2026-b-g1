@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRefresher, IonRefresherContent } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonToolbar, IonRefresher, IonRefresherContent } from '@ionic/react';
 import { cop, type Helado } from './catalog';
 export interface Linea { helado: Helado; tamano: string; topping: string; total: number }
 const ShopContext = createContext<{ lineas: Linea[]; add: (linea: Linea) => void }>({ lineas: [], add: () => {} });
@@ -9,7 +9,7 @@ export function ShopProvider({ children }: { children: ReactNode }) {
   return <ShopContext.Provider value={{ lineas, add: linea => setLineas(old => [...old, linea]) }}>{children}</ShopContext.Provider>;
 }
 export function Marco({ title, children, refresh }: { title: string; children: ReactNode; refresh?: () => Promise<void> }) {
-  return <IonPage><IonHeader><IonToolbar><IonTitle>ICA · {title}</IonTitle></IonToolbar></IonHeader>
+  return <IonPage><IonHeader><IonToolbar><div className="ica-toolbar-title">ICA · {title}</div></IonToolbar></IonHeader>
     <IonContent>{refresh && <IonRefresher slot="fixed" onIonRefresh={event => { void refresh().finally(() => event.detail.complete()); }}>
       <IonRefresherContent pullingText="Desliza para actualizar sabores" refreshingText="Actualizando catálogo" /></IonRefresher>}
       <main className="ica-content"><p className="ica-note">Demo del taller · sin cobros ni envío de pedidos</p>{children}</main></IonContent></IonPage>;

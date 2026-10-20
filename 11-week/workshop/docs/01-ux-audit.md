@@ -2,8 +2,8 @@
 
 Fuente: ICA Flutter, commit `6d7882d`, `frontend/lib/main.dart` y `store.dart`.
 Usuarios: clientes que buscan un sabor y eligen tamaño y topping antes de recogerlo.
-Pantallas propuestas para Pablo: catálogo y personalización. La distribución entre
-los tres integrantes todavía debe confirmarse. No se evaluó una sesión con usuarios.
+Pantallas elegidas por Pablo: catálogo y personalización.
+No se evaluó una sesión con usuarios.
 
 ## Hallazgos
 

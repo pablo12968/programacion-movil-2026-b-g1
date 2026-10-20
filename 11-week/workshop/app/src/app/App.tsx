@@ -29,9 +29,9 @@ const App: React.FC = () => (
       <Route exact path="/"><Redirect to="/tabs/helados" /></Route>
     </IonRouterOutlet>
     <IonTabBar slot="bottom">
-      <IonTabButton tab="helados" href="/tabs/helados"><IonIcon icon={iceCreamOutline} /><IonLabel>Helados</IonLabel></IonTabButton>
-      <IonTabButton tab="carrito" href="/tabs/carrito"><IonIcon icon={bagOutline} /><IonLabel>Carrito</IonLabel></IonTabButton>
-      <IonTabButton tab="pedidos" href="/tabs/pedidos"><IonIcon icon={receiptOutline} /><IonLabel>Mis pedidos</IonLabel></IonTabButton>
+      <IonTabButton tab="helados" href="/tabs/helados" aria-label="Helados"><IonIcon icon={iceCreamOutline} aria-hidden="true" /><IonLabel>Helados</IonLabel></IonTabButton>
+      <IonTabButton tab="carrito" href="/tabs/carrito" aria-label="Carrito"><IonIcon icon={bagOutline} aria-hidden="true" /><IonLabel>Carrito</IonLabel></IonTabButton>
+      <IonTabButton tab="pedidos" href="/tabs/pedidos" aria-label="Mis pedidos"><IonIcon icon={receiptOutline} aria-hidden="true" /><IonLabel>Mis pedidos</IonLabel></IonTabButton>
     </IonTabBar>
   </IonTabs></IonReactRouter></ShopProvider></IonApp>
 );
