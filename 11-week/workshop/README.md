@@ -7,7 +7,7 @@
 - DOCS_REPO: https://github.com/code-corhuila/ica-docs
 - CODE_REPO: https://github.com/pablo12968/ica.app
 - BASELINE: starter Ionic React oficial, commit eb86696b1b80402585555f30ba8984ebcb553643
-- REFLECTION_DOC: PENDIENTE de crear y compartir por el estudiante
+- REFLECTION_DOC: https://docs.google.com/document/d/1_OJjDinfip5GQJnr9_F77AQAuozVYHQYWyelLgy25S0/edit
 - MY_SCREENS: Catálogo de helados y personalización de tamaño/topping
 <!-- CONFIG-END -->
 
@@ -30,6 +30,6 @@ El starter abre en navegador y compila antes de modificarlo.
 
 - Escribir personalmente las entradas CP0 a CP4 en Google Docs y compartirlo
   como Editor con jesus.gonzalez@corhuila.edu.co.
-- Sustituir REFLECTION_DOC por la URL real y entregar las tres URL en Moodle.
+- Entregar las tres URL en Moodle y comprobar el permiso de Editor del docente.
 - El trabajo comenzó después del horario previsto de CP0; los commits y pushes
   conservan sus horas reales.
