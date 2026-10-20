@@ -7,7 +7,7 @@
 - DOCS_REPO: https://github.com/code-corhuila/ica-docs
 - CODE_REPO: https://github.com/pablo12968/ica.app
 - BASELINE: starter Ionic React oficial, commit eb86696b1b80402585555f30ba8984ebcb553643
-- REFLECTION_DOC: https://docs.google.com/document/d/1_OJjDinfip5GQJnr9_F77AQAuozVYHQYWyelLgy25S0/edit
+- REFLECTION_DOC: https://docs.google.com/document/d/16YdIYiZ9r_uTxDZrF7yt6svPEhhav0VkTagbJLFmZY0/edit
 - MY_SCREENS: Catálogo de helados y personalización de tamaño/topping
 <!-- CONFIG-END -->
 
