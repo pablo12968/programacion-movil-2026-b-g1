@@ -1,0 +1,16 @@
+# dependencias y compilación
+node_modules/
+dist/
+coverage/
+
+# secretos y configuración local: NUNCA se versionan (sí .env.example)
+.env
+.env.*
+!.env.example
+
+# editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
