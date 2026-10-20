@@ -1,0 +1,36 @@
+:root {
+  --ion-color-primary: #94334d;
+  --ion-color-primary-rgb: 148, 51, 77;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #822d44;
+  --ion-color-primary-tint: #9f4760;
+  --ion-color-secondary: #405c36;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-success: #28603b;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-danger: #a4262c;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-background-color: #fffaf4;
+  --ion-text-color: #302526;
+  --ica-muted: #65575a;
+  --ica-surface: #ffffff;
+  --ica-space-1: .5rem;
+  --ica-space-2: 1rem;
+  --ica-space-3: 1.5rem;
+  --ica-text-small: .875rem;
+  --ica-text-body: 1rem;
+  --ica-text-title: 1.75rem;
+  font-family: system-ui, sans-serif;
+}
+.ica-content { max-width: 60rem; margin: auto; padding: var(--ica-space-2); }
+.ica-content h1 { font-size: var(--ica-text-title); font-weight: 750; }
+.ica-content h2 { font-size: 1.25rem; }
+.ica-content p { line-height: 1.5; }
+.ica-note { color: var(--ica-muted); font-size: var(--ica-text-small); }
+.ica-grid { display: grid; gap: var(--ica-space-2); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ica-card { padding: var(--ica-space-2); border: 1px solid #d8c6c9; border-radius: 1rem; background: var(--ica-surface); }
+.ica-price { color: var(--ion-color-primary); font-weight: 750; }
+.ica-form { display: grid; gap: var(--ica-space-2); }
+.ica-form label { display: grid; gap: var(--ica-space-1); }
+.ica-form select, .ica-search { font: inherit; padding: .75rem; border: 1px solid #65575a; border-radius: .5rem; background: white; color: var(--ion-text-color); width: 100%; }
+.ica-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-block: 1rem; }
