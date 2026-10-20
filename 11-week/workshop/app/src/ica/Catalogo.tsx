@@ -19,7 +19,7 @@ export default function Catalogo({ cargar = cargarHelados }: { cargar?: typeof c
   useEffect(() => { void recargar(); }, [recargar]);
   const visibles = helados.filter(helado => (categoria === 'Todos' || helado.category === categoria)
     && helado.name.toLocaleLowerCase('es').includes(busqueda.trim().toLocaleLowerCase('es')));
-  return <Marco title="Helados"><h1>Elige tu próximo helado</h1><p>Sabores artesanales, a tu manera.</p>
+  return <Marco title="Helados" refresh={recargar}><h1>Elige tu próximo helado</h1><p>Sabores artesanales, a tu manera.</p>
     {estado === 'cargando' && <section aria-label="Cargando sabores" aria-busy="true">
       <p role="status">Cargando sabores…</p><div className="ica-grid">{[1, 2, 3, 4].map(id =>
         <div className="ica-card" key={id} aria-hidden="true"><IonSkeletonText animated style={{height:'1rem',width:'50%'}} />

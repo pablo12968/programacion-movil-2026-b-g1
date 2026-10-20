@@ -16,6 +16,12 @@ Sin `VITE_ICA_API_URL` se usan los datos demo. Con esa variable se consulta
 `GET /api/products`, con límite de espera de 12 s y validación básica de respuesta.
 Los errores de red se presentan al usuario sin detalles técnicos internos.
 
+La recarga por gesto utiliza `IonRefresher`; su indicador se cierra también si
+la petición falla. `npm test` ejecuta Vitest con Testing Library y los componentes
+Ionic reales. La prueba rechaza la primera petición, pulsa Reintentar, comprueba
+la segunda llamada y verifica que aparece Fresa de temporada y desaparece el error.
+Otra prueba diferencia catálogo vacío y búsqueda sin resultados.
+
 ![Carga](img/after-cargando.png)
 ![Datos](img/after-datos.png)
 ![Error](img/after-error.png)
