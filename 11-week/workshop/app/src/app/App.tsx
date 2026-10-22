@@ -5,6 +5,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { iceCreamOutline, bagOutline, receiptOutline } from 'ionicons/icons';
 import Catalogo from '../ica/Catalogo';
 import Personalizar from '../ica/Personalizar';
+import FormularioPedido from '../ica/FormularioPedido';
 import { Carrito, Pedidos, ShopProvider } from '../ica/shop';
 
 /* CSS base de Ionic (obligatorio) */
@@ -25,6 +26,7 @@ const App: React.FC = () => (
       <Route exact path="/tabs/helados" component={Catalogo} />
       <Route exact path="/tabs/helados/:id" component={Personalizar} />
       <Route exact path="/tabs/carrito" component={Carrito} />
+      <Route exact path="/tabs/carrito/confirmar" component={FormularioPedido} />
       <Route exact path="/tabs/pedidos" component={Pedidos} />
       <Route exact path="/"><Redirect to="/tabs/helados" /></Route>
     </IonRouterOutlet>

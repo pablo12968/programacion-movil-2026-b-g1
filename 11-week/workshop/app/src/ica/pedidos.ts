@@ -13,6 +13,7 @@ export function erroresPedido(datos: DatosPedido) {
 }
 const recibidos = new Map<string, { cuerpo: string; pedido: Pedido }>();
 const fallos = new Set<string>();
+const pruebaInicial = new URLSearchParams(window.location.search).get('pedido');
 export async function enviarPedido(datos: DatosPedido, lineas: Linea[], referencia: string): Promise<Pedido> {
   const errores = erroresPedido(datos);
   if (errores.nombre || errores.nota) throw new Error(errores.nombre || errores.nota);
@@ -29,9 +30,10 @@ export async function enviarPedido(datos: DatosPedido, lineas: Linea[], referenc
     return anterior.pedido;
   }
   const params = new URLSearchParams(window.location.search);
-  const demora = import.meta.env.DEV && params.get('pedido') === 'lento' ? 4000 : 500;
+  const modo = params.get('pedido') ?? pruebaInicial;
+  const demora = import.meta.env.DEV && modo === 'lento' ? 4000 : 500;
   await new Promise(resolve => setTimeout(resolve, demora));
-  if (import.meta.env.DEV && params.get('pedido') === 'error' && !fallos.has(referencia)) {
+  if (import.meta.env.DEV && modo === 'error' && !fallos.has(referencia)) {
     fallos.add(referencia);
     throw new Error('No pudimos guardar el pedido. Tus datos se conservan; vuelve a intentarlo.');
   }
